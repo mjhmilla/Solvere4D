@@ -1,0 +1,13 @@
+Shape {
+	 appearance DEF $TAG$_A Appearance {
+		  material DEF $TAG$_M Material {
+		   diffuseColor $RGB$
+		   ambientIntensity 0.5
+		   specularColor $RGB$
+		   emissiveColor $RGB$
+		   shininess 0.5
+		   transparency $TRANSPARENCY$
+		}
+	}
+	geometry $GEO$
+}

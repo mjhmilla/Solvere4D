@@ -1,0 +1,29 @@
+<timeScaling>,2.0
+<downSampling>,4
+<backgroundColour>,R1.0 G1.0 B1.0 
+<bodyWRL>,<bodiesMOV>
+redsphere.wrl,M1.dat
+redsphere.wrl,M2.dat
+redsphere.wrl,M3.dat
+redsphere.wrl,M4.dat
+redsphere.wrl,M5.dat
+redsphere.wrl,M6.dat
+bluesphere.wrl,M7.dat
+bluesphere.wrl,M8.dat
+bluesphere.wrl,M9.dat
+bluesphere.wrl,M10.dat
+bluesphere.wrl,M11.dat
+bluesphere.wrl,M12.dat
+redplane.wrl,FPEX.dat
+<\bodyWRL>,<\bodiesMOV>
+<forceTorque>, normF=1.0 normT=1.0 normD=0.5 
+FPE_c.dat
+HFP_c.dat
+<\forceTorque>
+<camera>
+cameraPosOrien.dat
+<\camera>
+<markers>
+box x0.09 y0.03 z0.2 R0.6 G0.6 B0.6 T0.50 ,floorMarkers.txt
+<\markers>
+

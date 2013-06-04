@@ -1,0 +1,4 @@
+DEF $TAG$_SI PositionInterpolator {
+ key [ $KEY$ ]
+ keyValue [ $KEYVALUE$ ]
+}

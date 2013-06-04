@@ -1,0 +1,31 @@
+#VRML V2.0 utf8
+
+DEF blueSphere Transform {
+    translation 0 0 0
+    scale 1 1 1
+
+    children [
+        Transform {
+        translation 0 0 0
+        scale 1 1 1
+         children [
+          Shape{
+                   appearance Appearance{
+                      material DEF blueSphere Material{
+                          diffuseColor 0.4 0.4 1
+                          specularColor 0.5 0.5 0.9
+                          shininess 0.5
+                          transparency 0
+                       }
+                    }
+
+                    geometry Sphere {
+                        radius 0.025
+                        solid TRUE
+                    }
+                }
+            ]
+        }
+
+    ]
+}

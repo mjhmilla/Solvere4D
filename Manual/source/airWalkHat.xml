@@ -1,0 +1,56 @@
+<timeScaling>,	1.0
+<downSampling>,	2
+<backgroundColour>,  <R 0.90 G 0.90 B 0.90> 
+<lightDirection>, <X -0.5 Y -0.5 Z -1>
+<headlight>, 0
+<bodyGEO>,<bodiesMOV>
+	hat.wrl, 	HatPosOrien.dat
+	thighL.wrl,	HipLeftJointPosOrien.dat
+	shinL.wrl,	KneeLeftJointPosOrien.dat
+	footL.wrl,	AnkleLeftJointPosOrien.dat
+	thigh.wrl,	HipRightJointPosOrien.dat
+	shin.wrl,	KneeRightJointPosOrien.dat
+	foot.wrl,	AnkleRightJointPosOrien.dat
+	contact.wrl,	heelRightPosOrien.dat
+	contact.wrl,	heelLeftPosOrien.dat
+	contact.wrl,	toeRightPosOrien.dat
+	contact.wrl,	toeLeftPosOrien.dat
+<\bodyGEO>,<\bodiesMOV>
+<forceTorque>,<genForceTorquePlots> normF=1000.0 normT=500.0 normD=1.0 
+	toeRightForces.dat,	 <f 0 w 0 c 0 R 0.0 G 0.0 B 0.5 T 0.5> <t 0 w 1 c 1 R 1.0 G 0.5 B 0.0 T 0.5>	
+	heelRightForces.dat, <f 0 w 0 c 0 R 0.0 G 0.0 B 1.0 T 0.5> <t 0 w 1 c 1 R 0.0 G 0.5 B 1.0 T 0.5>
+	leftGRF.dat,	     	 <f 0 w 0 c 0 R 1.0 G 0.2 B 0.2 T 0.5> <t 0 w 1 c 1 R 1.5 G 1.0 B 0.0 T 0.5>
+	hipLeftTorque.dat,	 <f 0 w 1 c 1 R 0.0 G 1.0 B 1.0 T 0.5> <t 0 w 1 c 1 R 0.33 G 0.0  B 0.33 T 0.5>
+	hipRightTorque.dat,	 <f 0 w 1 c 1 R 0.5 G 0.5 B 1.0 T 0.5> <t 0 w 1 c 1 R 0.33 G 0.33 B 0.0 T 0.5>
+	kneeLeftTorque.dat,	 <f 0 w 1 c 1 R 0.5 G 0.5 B 1.0 T 0.5> <t 0 w 1 c 1 R 0.67 G 0.0  B 0.67 T 0.5>	
+	kneeRightTorque.dat, <f 0 w 1 c 1 R 0.5 G 0.5 B 1.0 T 0.5> <t 0 w 1 c 1 R 0.67 G 0.67 B 0.0 T 0.5>
+	ankleLeftTorque.dat, <f 0 w 1 c 1 R 0.5 G 0.5 B 1.0 T 0.5> <t 0 w 0 c 1 R 1.0  G 0.0  B 1.0 T 0.25>
+	ankleRightTorque.dat,<f 0 w 1 c 1 R 0.5 G 0.5 B 1.0 T 0.5> <t 0 w 1 c 1 R 1.0  G 1.0  B 0.0 T 0.5>
+<\forceTorque>,<\genForcePlots>,<\genTorquePlots>
+<camera>
+	cameraPosOrien.dat
+<\camera>
+<markers>
+	gridMarkers.txt, 	 <sphere r 0.02 		         	R 0.6 G 0.6 B 0.9 T 0.0> 		
+	floorMarkers.txt,	 <box    x 0.05 y 0.01 z 0.2 	R 0.6 G 0.6 B 0.8 T 0.0> 	
+	xyGridMarkers.txt, <sphere r 0.01 		        	R 0.0 G 0.0 B 0.8 T 0.0>		
+<\markers>
+#<plot3D>
+	ankleLeftTorquePLOTY.dat,<w 1 R 0.0 G 0.0 B 0.5 T 0.5  s 0.075 m 1 R 1.0 G 0.0 B 0.0 "Ankle Torque" R 0.0 G 0.0 B 0.0>
+	kneeLeftTorquePLOTY.dat, <w 1 R 0.0 G 0.0 B 0.5 T 0.5  s 0.075 m 1 R 1.0 G 0.0 B 0.0 "Knee Torque"  R 0.0 G 0.0 B 0.0>
+	hipLeftTorquePLOTY.dat,	 <w 1 R 0.0 G 0.0 B 0.5 T 0.5  s 0.075 m 1 R 1.0 G 0.0 B 0.0 "Hip Torque"   R 0.0 G 0.0 B 0.0>
+<\plot3D>
+<stickFigures>
+	stickfigure.dat, <R 0 G 0 B 0 >
+<\stickFigures>
+#<movingLabels>
+	larryLabel.dat, <"Larry" s 0.5 R 0.0  G 0.0  B 1.0>
+<\movingLabels>
+
+Anything that is not betwetween a recognized tag such as those above,
+int the angled brackets, is treated as a comment.
+
+If the tags in the square brackets have any other character (such as the
+"#" in front of the moving Label) then the whole block is ignored. At
+the moment there is no way to comment out a single entry for a given
+tag, you just have to move it outside from its tagged region.

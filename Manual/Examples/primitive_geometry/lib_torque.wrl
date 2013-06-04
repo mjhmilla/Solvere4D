@@ -1,0 +1,77 @@
+#VRML V2.0 utf8
+
+Background { skyColor 1 1 1  }
+
+DEF torque Transform {
+    translation 0 0 0
+    scale 1 1 1
+
+    children [
+        Transform {
+        translation 0 -0.60 0
+        scale 1 1 1
+         children [
+          Shape{
+                   appearance Appearance{
+                      material DEF torque_MAT Material{
+                         diffuseColor 0.6 0.6 0.9
+                         specularColor 0.6 0.6 0.6
+                         shininess 0.5
+                         transparency 0.25
+                       }
+                    }
+
+                    geometry Cylinder {
+                        radius 0.075
+                        height 0.80
+                        bottom TRUE
+                        side TRUE
+                        top TRUE
+                        solid TRUE
+                    }
+                }
+            ]
+        }
+
+        Transform {
+        translation 0 -0.5 0
+        scale 1 1 1
+         children [
+          Shape{
+                   appearance Appearance{
+                      material USE torque_MAT
+                    }
+
+                    geometry Cylinder {
+                        radius 0.5
+                        height 0.05
+                        bottom TRUE
+                        side TRUE
+                        top TRUE
+                        solid TRUE
+                    }
+                }
+            ]
+        }
+
+        Transform {
+        translation 0 -0.1 0
+        scale 1 1 1
+         children [
+          Shape{
+                   appearance Appearance{
+                      material USE torque_MAT
+                    }
+
+                    geometry Cone {
+                        bottomRadius 0.15
+                        height 0.20
+                        bottom TRUE
+                        side TRUE
+                        solid TRUE
+                    }
+                }
+            ]
+        }
+    ]
+}

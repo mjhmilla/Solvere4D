@@ -1,0 +1,21 @@
+Transform {
+translation $TRANSLATION$
+	children [
+		Shape{
+			appearance Appearance{
+				material Material{
+				  diffuseColor $RGB$
+				  transparency $TRANSPARENCY$
+				}
+			}
+			geometry Cylinder {
+				radius $RADIUS$
+				height $HEIGHT$
+				bottom TRUE
+				side TRUE
+				top TRUE
+				solid TRUE
+			}
+		}
+	]
+}

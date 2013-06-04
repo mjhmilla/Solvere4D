@@ -1,0 +1,647 @@
+#####################################################
+#
+#	TimeControl code
+#      V 1.0 Matthew Millard, Sept 5,2008
+#
+#####################################################
+
+DEF timeTxtTransform Transform {
+
+	translation 0 0 0
+	scale 1 1 1
+	children [
+
+
+		DEF timeTxtAdjTransform Transform {
+
+						translation 0.0 -0.125 -0.3125
+						scale 0.0078125 0.0078125 0.0078125
+						children [
+								Transform{
+									translation 0 0 -0.2
+									children[
+										Shape{
+											   appearance Appearance{
+												  material Material{
+													  diffuseColor 1 1 1
+													  specularColor 1 1 1
+													  shininess 0.5
+													  transparency 0.5
+												   }
+												}
+
+												geometry Box {
+													size 20 5 0.1
+													solid TRUE
+												}
+
+										}
+									]
+								}
+
+								Transform{
+									translation 0 2.5 0
+									scale 1 1 1
+									rotation 0 0 1 1.570796327
+									children[
+										Shape{
+											   appearance Appearance{
+												  material Material{
+													  diffuseColor 0.6 0.6 0.6
+													  specularColor 0.6 0.6 0.6
+													  shininess 0.5
+													  transparency 0
+												   }
+												}
+
+												geometry Cylinder {
+													radius 0.125
+													height 20
+													bottom TRUE
+													side TRUE
+													top TRUE
+													solid TRUE
+												}
+												}
+										]
+								}
+
+
+								DEF sliderTrans Transform {
+									translation -10 2 0
+									scale 1 1 1
+
+									children[
+										Shape{
+											   appearance Appearance{
+												  material Material{
+													  diffuseColor 0.4 0.4 0.4
+													  specularColor 0.4 0.4 0.4
+													  shininess 0.5
+													  transparency 0
+												   }
+												}
+
+												geometry Cone {
+													bottomRadius 0.5
+													height 1
+													bottom TRUE
+													side TRUE
+													solid TRUE
+												}
+										}
+
+										#DEF sliderSensor TouchSensor{
+										#	description "Adjust time"
+										#}
+
+										DEF sliderPlaneSensor PlaneSensor{
+											description "Adjust Time"
+											maxPosition 10 0
+											minPosition -10 0
+											offset -10 0 0
+											enabled TRUE
+
+										}
+
+
+									]
+
+								}
+
+
+								Transform {
+
+									translation -2.25 0 0
+									scale 1 1 1
+
+									children[
+										Shape{
+											   appearance Appearance{
+												  material Material{
+													  diffuseColor 0.4 0.4 0.9
+													  specularColor 0.4 0.5 0.9
+													  shininess 0.5
+													  transparency 0
+												   }
+												}
+
+												geometry Sphere {
+													radius 0.5
+													solid TRUE
+												}
+										}
+
+										DEF playPauseTouchSensor TouchSensor{
+											description "Play/Play"
+										}
+									]
+
+
+								}
+
+
+							Transform {
+
+									translation -3.25 0 0
+									scale 1 1 1
+
+									children[
+										Shape{
+											   appearance Appearance{
+												  material Material{
+													  diffuseColor 0.9 0.4 0.4
+													  specularColor 0.9 0.5 0.5
+													  shininess 0.5
+													  transparency 0
+												   }
+												}
+
+												geometry Cone {
+													bottomRadius 0.5
+													height 1
+													bottom TRUE
+													side TRUE
+													solid TRUE
+												}
+										}
+
+										DEF fastTimeTouchSensor TouchSensor{
+											description "Fast Forward"
+										}
+									]
+
+
+								}
+
+
+							Transform {
+
+									translation -4.25 0 0
+									scale 1 1 1
+									rotation 0 0 1 3.14259
+									children[
+										Shape{
+											   appearance Appearance{
+												  material Material{
+													  diffuseColor 0.9 0.4 0.4
+													  specularColor 0.9 0.5 0.5
+													  shininess 0.5
+													  transparency 0
+												   }
+												}
+
+												geometry Cone {
+													bottomRadius 0.5
+													height 1
+													bottom TRUE
+													side TRUE
+													solid TRUE
+												}
+										}
+
+										DEF slowFwdTimeTouchSensor TouchSensor{
+											description "Show Foward Motion"
+										}
+									]
+
+
+								}
+
+								Transform {
+
+									translation -1.25 0 0
+
+									children[
+										Shape{
+											appearance  Appearance {
+												material Material {
+													diffuseColor 0 0 0
+													ambientIntensity 0.5
+													specularColor 0 0 0
+													emissiveColor  0 0 0
+													shininess 1
+													transparency 0
+												}
+											}
+
+											geometry DEF timeTxtBillBoardNode Billboard{
+
+												axisOfRotation 0 0 0
+												bboxCenter 0 0 0
+												bboxSize -1 -1 -1
+
+												children [
+													DEF timeTextNode Text {
+													 length 10
+													 maxExtent 20
+													 string ["Time: 0:00:00.000"]
+													 solid FALSE
+
+													 fontStyle DEF MyFontStyle FontStyle{
+														family ["SERIF"]
+														justify ["BEGIN"]
+														style "BOLD"
+														horizontal TRUE
+														leftToRight TRUE
+														topToBottom TRUE
+														size 1
+														spacing 5
+													 }
+													}
+
+												]
+
+											}
+										}
+									]
+								}
+
+								Transform {
+
+									translation -9.0 0 0
+									scale 1 1 1
+									children[
+										Shape {
+											appearance  Appearance {
+													material  Material {
+														diffuseColor 0 0 0
+														ambientIntensity 0.5
+														specularColor 0 0 0
+														emissiveColor  0 0 0
+														shininess 1
+														transparency 0
+													}
+											}
+
+
+											geometry DEF timeScaleTxtBillBoardNode Billboard{
+												axisOfRotation 0 0 0
+												bboxCenter 0 0 0
+												bboxSize -1 -1 -1
+
+												children [
+													DEF timeScaleTextNode Text {
+													 length 4
+													 maxExtent 10
+													 string ["1.0000"]
+													 solid FALSE
+
+													 fontStyle DEF MyFontStyle FontStyle{
+														family ["SERIF"]
+														justify ["BEGIN"]
+														style "BOLD"
+														horizontal TRUE
+														leftToRight TRUE
+														topToBottom TRUE
+														size 1
+														spacing 5
+													 }
+
+													}
+
+												]
+											}
+										}
+									]
+								}
+						]
+		}
+
+
+
+	]
+}
+
+
+
+DEF viewerProxSens ProximitySensor{
+	center 0 0 0
+	size 1000000000 1000000000 1000000000
+}
+
+
+ROUTE viewerProxSens.position_changed TO timeTxtTransform.translation
+ROUTE viewerProxSens.centerOfRotation_changed TO timeTxtTransform.center
+ROUTE viewerProxSens.orientation_changed TO timeTxtTransform.rotation
+
+
+
+
+DEF timeDisplay Script {
+  directOutput FALSE
+  mustEvaluate TRUE
+
+  eventIn  SFFloat	set_dispTime
+  field    SFInt32 intField_hours 0
+  field    SFInt32 intField_mSec 0
+  field    SFInt32 intField_sec 0
+  field    SFInt32 intField_min 0
+  eventOut MFString currTime
+
+  url "javascript:
+		  function set_dispTime (value)
+		  {
+			//Browser.print(value*10);
+			value = value*10;
+			intField_hours = Math.floor(value/3600.0);
+			intField_min = Math.floor( (value-intField_hours*3600.0)/60.0);
+			intField_sec = Math.floor(value - intField_min*60.0);
+			intField_mSec = Math.floor( (value - intField_sec)*1000);
+			currTime = new MFString( 'Time: ' );
+
+			currTime = currTime + intField_hours + ':';
+
+			if(intField_min < 10){
+				currTime = currTime + '0' + intField_min + ':';
+			}else{
+				currTime = currTime  + intField_min + ':';
+			}
+
+			if(intField_sec < 10){
+				currTime = currTime + '0' + intField_sec + '.';
+			}else{
+				currTime = currTime + intField_sec + '.';
+			}
+
+			if (intField_mSec < 100){
+			  if (intField_mSec < 10){
+			  	currTime = currTime  + '00' + intField_mSec;
+			  }else{
+			  	currTime = currTime + '0' + intField_mSec;
+			  }
+
+			}else{
+			  currTime = currTime + intField_mSec;
+			}
+
+
+
+		  }
+  "
+}
+
+ROUTE TS.fraction_changed TO timeDisplay.set_dispTime
+ROUTE timeDisplay.currTime TO timeTextNode.string
+
+
+
+DEF TimeControl Script {
+  directOutput FALSE
+  mustEvaluate TRUE
+
+  eventIn  SFTime	increase_cycleInterval
+  eventIn  SFTime	decrease_cycleInterval
+  eventIn  SFTime   set_cycleTime
+  eventIn  SFFloat  set_fraction
+  eventIn  SFTime	set_pause
+  eventIn  SFTime	set_play
+  eventIn  SFVec3f  set_time
+  eventIn  SFBool	slider_isActive
+  eventIn  SFTime   cycleInterval
+
+  field    SFFloat  currFraction 0
+  field    SFTime   default_cycleInterval $1$
+  field    SFTime   dispScale 1.0
+  field    SFTime   scale 1.0
+  field    SFTime   lastStartTime 0
+  field    SFTime   prevScale 1.0
+  field    SFInt32  scale_1		1
+  field    SFInt32  scale_p1	1
+  field    SFTime   currTime    0
+  field    SFBool   sliderActive FALSE
+
+  eventOut SFTime   get_cycleInterval
+  eventOut SFTime   get_newStartTime
+  eventOut SFTime   pauseTime
+  eventOut SFTime   startTime
+  eventOut SFBool   enabled
+  eventOut MFString get_timeScale
+  eventOut SFTime   get_cycleTime
+  eventOut SFBool   set_ppToggleState
+  eventOut SFVec3f  set_timeSlider
+  eventOut SFVec3f  get_sliderOffset
+  url "javascript:
+  		  function set_fraction(value){
+  		  	if(pauseTime == 0){// && sliderActive == FALSE){
+  		  		currFraction = value;
+  		  		currTime  = currFraction * default_cycleInterval;
+	  		  	set_timeSlider = new SFVec3f((value)*20-10, 2, 0);
+			}
+
+  		  }
+
+		  function set_play(value){
+		    startTime = value -  currTime * scale;
+		    //Browser.print('Pla: currFraction: ' + currFraction + ' currTime: ' + currTime + ' deltaTime: ' + (scale*currTime) );
+		  	pauseTime = 0;
+		  	enabled = TRUE;
+		  }
+
+		  function set_pause(value){
+		    //if(sliderActive == FALSE){
+		  	get_sliderOffset = new SFVec3f(currFraction*20-10, 2, 0);
+		  	set_fraction(currFraction);
+		  	//}
+		  	pauseTime = value;
+		  	//Browser.print('Pau: currFraction: ' + currFraction + ' currTime: ' + currTime + ' deltaTime: ' + (scale*currTime) );
+		  	enabled = TRUE;
+		  }
+
+		  function set_time(value){
+			currTime = default_cycleInterval * (value[0]+10)/20;
+			//Browser.print('X val ' + value[0] + ' CurrentTime: ' + currTime);
+			set_fraction((value[0]+10)/20);
+			set_timeSlider = new SFVec3f(value[0],2,0);
+
+			//if(set_ppToggleState == TRUE){
+			//	set_ppToggleState = FALSE;
+			//}else{
+			//	set_ppToggleState = TRUE;
+			//}
+
+		  }
+
+
+		  function set_cycleTime(value){
+		  	lastStartTime = value;
+		  	enabled = TRUE;
+		  }
+
+		  //function slider_isActive(value){
+		  //	sliderActive = value;
+		  //}
+
+		  function increase_cycleInterval(value){
+
+
+		  	    prevScale = scale;
+				scale = scale * 0.50;
+
+
+
+				//Browser.print('Inc: currFraction: ' + currFraction + ' currTime: ' + currTime + ' deltaTime: ' + (scale*currTime) );
+
+				dispScale = 1/scale;
+				scale_1 = Math.floor(dispScale);
+				scale_p1 = Math.floor((dispScale-scale_1*1.0)*10000.0);
+				get_timeScale = new MFString('');
+				get_timeScale = scale_1 + '.';
+
+				if(scale_p1 < 1000){
+					if(scale_p1 < 100){
+						if(scale_p1 < 10){
+							get_timeScale = get_timeScale + '000' + scale_p1;
+						}else{
+							get_timeScale = get_timeScale + '00' + scale_p1;
+						}
+					}else{
+						get_timeScale = get_timeScale + '0' + scale_p1;
+					}
+				}else{
+					get_timeScale = get_timeScale + scale_p1;
+				}
+
+				get_cycleInterval = scale * default_cycleInterval;
+
+				if(pauseTime == 0){
+					set_pause(value);
+					set_ppToggleState = TRUE;
+				}
+
+		  }
+
+		  function decrease_cycleInterval(value){
+
+
+		  		prevScale = scale;
+				scale = scale * 2.00;
+
+
+				//Browser.print('Dec: currFraction: ' + currFraction + ' currTime: ' + currTime + ' deltaTime: ' + (scale*currTime) );
+
+				dispScale = 1/scale;
+				scale_1 = Math.floor(dispScale);
+				scale_p1 = Math.floor((dispScale-scale_1*1.0)*10000.0);
+				get_timeScale = new MFString('');
+				get_timeScale = scale_1 + '.';
+
+				if(scale_p1 < 1000){
+					if(scale_p1 < 100){
+						if(scale_p1 < 10){
+							get_timeScale = get_timeScale + '000' + scale_p1;
+						}else{
+							get_timeScale = get_timeScale + '00' + scale_p1;
+						}
+					}else{
+						get_timeScale = get_timeScale + '0' + scale_p1;
+					}
+				}else{
+					get_timeScale = get_timeScale + scale_p1;
+				}
+
+				get_cycleInterval = scale * default_cycleInterval;
+
+				if(pauseTime == 0){
+					set_pause(value);
+					set_ppToggleState = TRUE;
+				}
+
+
+
+		  }
+
+  "
+}
+
+
+
+ROUTE TS.fraction_changed TO TimeControl.set_fraction
+
+#Play pause switch handling
+	DEF playPauseToggler BooleanToggle {
+	  toggle TRUE
+	}
+	ROUTE playPauseTouchSensor.isActive TO playPauseToggler.set_boolean
+	DEF playPauseBF BooleanFilter {
+	}
+
+	ROUTE playPauseToggler.toggle_changed TO playPauseBF.set_boolean
+	DEF PauseOn TimeTrigger {
+	}
+
+	ROUTE playPauseBF.inputTrue TO PauseOn.set_boolean
+	ROUTE PauseOn.triggerTime TO TimeControl.set_play
+
+	DEF PauseOff TimeTrigger {
+	}
+
+	ROUTE playPauseBF.inputFalse TO PauseOff.set_boolean
+	ROUTE PauseOff.triggerTime TO TimeControl.set_pause
+
+	#ROUTE Tee.inputTrue TO TS.enabled
+	#ROUTE Tee.inputFalse TO TS.enabled
+
+
+	ROUTE TS.cycleTime TO TimeControl.set_cycleTime
+	ROUTE TimeControl.pauseTime TO TS.stopTime
+	ROUTE TimeControl.startTime TO TS.startTime
+	ROUTE TimeControl.enabled TO TS.enabled
+
+#FFwd Time Switch Handling
+	DEF ffwdToggler BooleanToggle{
+		toggle FALSE
+	}
+	ROUTE fastTimeTouchSensor.isActive TO ffwdToggler.set_boolean
+	DEF ffwdBF BooleanFilter{
+	}
+
+	ROUTE ffwdToggler.toggle_changed TO ffwdBF.set_boolean
+	DEF ffwdTT TimeTrigger {
+	}
+
+	ROUTE ffwdBF.inputTrue TO ffwdTT.set_boolean
+	ROUTE ffwdBF.inputFalse TO ffwdTT.set_boolean
+	ROUTE ffwdTT.triggerTime TO TimeControl.increase_cycleInterval
+
+
+#SFwd Time Switch Handling
+	DEF sfwdToggler BooleanToggle{
+		toggle FALSE
+	}
+	ROUTE slowFwdTimeTouchSensor.isActive TO sfwdToggler.set_boolean
+	DEF sfwdBF BooleanFilter{
+	}
+
+	ROUTE sfwdToggler.toggle_changed TO sfwdBF.set_boolean
+	DEF sfwdTT TimeTrigger {
+	}
+
+	ROUTE sfwdBF.inputTrue TO sfwdTT.set_boolean
+	ROUTE sfwdBF.inputFalse TO sfwdTT.set_boolean
+	ROUTE sfwdTT.triggerTime TO TimeControl.decrease_cycleInterval
+
+	#ROUTE fastTimeTouchSensor.touchTime TO TimeControl.increase_cycleInterval
+
+#sliderPlaneSensor Touch handling
+	DEF ssToggler BooleanToggle{
+		toggle TRUE
+	}
+	ROUTE sliderPlaneSensor.isActive TO ssToggler.set_boolean
+	DEF ssBF BooleanFilter{
+	}
+	ROUTE ssToggler.toggle_changed TO ssBF.set_boolean
+	DEF ssTT TimeTrigger{
+	}
+
+	ROUTE ssBF.inputTrue TO ssTT.set_boolean
+	ROUTE ssBF.inputFalse TO ssTT.set_boolean
+	ROUTE ssTT.triggerTime TO TimeControl.set_pause
+
+#PlaneSensor for handling manual time re-adjustment
+	ROUTE TimeControl.set_ppToggleState TO playPauseToggler.set_boolean
+	ROUTE TimeControl.get_cycleInterval TO TS.cycleInterval
+	ROUTE TimeControl.get_timeScale TO timeScaleTextNode.string
+	ROUTE TimeControl.set_timeSlider TO sliderTrans.translation
+	ROUTE sliderPlaneSensor.translation_changed TO TimeControl.set_time
+	ROUTE TimeControl.get_sliderOffset TO sliderPlaneSensor.offset

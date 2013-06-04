@@ -1,0 +1,20 @@
+Transform {
+translation $TRANSLATION$
+	children [
+		Shape{
+			appearance Appearance{
+				material Material{
+				  diffuseColor $RGB$
+				  transparency $TRANSPARENCY$
+				}
+			}
+			geometry Cone {
+				bottomRadius $RADIUS$
+				height $HEIGHT$
+				bottom TRUE
+				side TRUE
+				solid TRUE
+			}
+		}
+	]
+}

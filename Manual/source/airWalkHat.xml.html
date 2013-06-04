@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>C:\Documents and Settings\mjhmilla\DynaFlexAnimation\Solvere4D\Manual\source\airWalkHat.xml</title>
+	<link rel="stylesheet" type="text/css" href="highlight.css">
+</head>
+<body>
+<pre><span class="key">&lt;timeScaling&gt;</span>,    <span class="num">1.0
+</span><span class="key">&lt;downSampling&gt;</span>,    <span class="num">2
+</span><span class="key">&lt;backgroundColour&gt;</span>,  <span class="key">&lt;R </span><span class="num">0.90 </span><span class="key">G </span><span class="num">0.90 </span><span class="key">B </span><span class="num">0.90</span><span class="key">&gt;</span>
+<span class="key">&lt;lightDirection&gt;</span>, <span class="key">&lt;X </span><span class="num">-0.5 </span><span class="key">Y </span><span class="num">-0.5 </span><span class="key">Z </span><span class="num">-1</span><span class="key">&gt;</span>
+<span class="key">&lt;headlight&gt;</span>, <span class="num">0
+</span><span class="key">&lt;bodyGEO&gt;</span>,<span class="key">&lt;bodiesMOV&gt;</span>
+    hat.wrl,     HatPosOrien.dat
+    thighL.wrl,    HipLeftJointPosOrien.dat
+    shinL.wrl,    KneeLeftJointPosOrien.dat
+    footL.wrl,    AnkleLeftJointPosOrien.dat
+    thigh.wrl,    HipRightJointPosOrien.dat
+    shin.wrl,    KneeRightJointPosOrien.dat
+    foot.wrl,    AnkleRightJointPosOrien.dat
+    contact.wrl,    heelRightPosOrien.dat
+    contact.wrl,    heelLeftPosOrien.dat
+    contact.wrl,    toeRightPosOrien.dat
+    contact.wrl,    toeLeftPosOrien.dat
+<span class="key">&lt;\bodyGEO&gt;</span>,<span class="key">&lt;\bodiesMOV&gt;</span>
+<span class="key">&lt;forceTorque&gt;</span>,<span class="key">&lt;genForceTorquePlots&gt;</span> normF=<span class="num">1000.0 </span>normT=<span class="num">500.0 </span>normD=<span class="num">1.0
+    </span>toeRightForces.dat,     <span class="key">&lt;f0 w0 c0 R0</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.5 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span> <span class="key">&lt;t0 w1 c1 R1</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.5 </span><span class="key">B0</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span>
+    heelRightForces.dat, <span class="key">&lt;f0 w0 c0 R0</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B1</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span> <span class="key">&lt;t0 w1 c1 R0</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.5 </span><span class="key">B1</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span>
+    leftGRF.dat,              <span class="key">&lt;f0 w0 c0 R1</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.2 </span><span class="key">B0</span><span class="num">.2 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span> <span class="key">&lt;t0 w1 c1 R1</span><span class="num">.5 </span><span class="key">G1</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span>
+    hipLeftTorque.dat,     <span class="key">&lt;f0 w1 c1 R0</span><span class="num">.0 </span><span class="key">G1</span><span class="num">.0 </span><span class="key">B1</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span> <span class="key">&lt;t0 w1 c1 R0</span><span class="num">.33 </span><span class="key">G0</span><span class="num">.0  </span><span class="key">B0</span><span class="num">.33 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span>
+    hipRightTorque.dat,     <span class="key">&lt;f0 w1 c1 R0</span><span class="num">.5 </span><span class="key">G0</span><span class="num">.5 </span><span class="key">B1</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span> <span class="key">&lt;t0 w1 c1 R0</span><span class="num">.33 </span><span class="key">G0</span><span class="num">.33 </span><span class="key">B0</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span>
+    kneeLeftTorque.dat,     <span class="key">&lt;f0 w1 c1 R0</span><span class="num">.5 </span><span class="key">G0</span><span class="num">.5 </span><span class="key">B1</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span> <span class="key">&lt;t0 w1 c1 R0</span><span class="num">.67 </span><span class="key">G0</span><span class="num">.0  </span><span class="key">B0</span><span class="num">.67 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span>
+    kneeRightTorque.dat, <span class="key">&lt;f0 w1 c1 R0</span><span class="num">.5 </span><span class="key">G0</span><span class="num">.5 </span><span class="key">B1</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span> <span class="key">&lt;t0 w1 c1 R0</span><span class="num">.67 </span><span class="key">G0</span><span class="num">.67 </span><span class="key">B0</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span>
+    ankleLeftTorque.dat, <span class="key">&lt;f0 w1 c1 R0</span><span class="num">.5 </span><span class="key">G0</span><span class="num">.5 </span><span class="key">B1</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span> <span class="key">&lt;t0 w0 c1 R1</span><span class="num">.0  </span><span class="key">G0</span><span class="num">.0  </span><span class="key">B1</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.25</span><span class="key">&gt;</span>
+    ankleRightTorque.dat,<span class="key">&lt;f0 w1 c1 R0</span><span class="num">.5 </span><span class="key">G0</span><span class="num">.5 </span><span class="key">B1</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span> <span class="key">&lt;t0 w1 c1 R1</span><span class="num">.0  </span><span class="key">G1</span><span class="num">.0  </span><span class="key">B0</span><span class="num">.0 </span><span class="key">T0</span><span class="num">.5</span><span class="key">&gt;</span>
+<span class="key">&lt;\forceTorque&gt;</span>,<span class="key">&lt;\genForcePlots&gt;</span>,<span class="key">&lt;\genTorquePlots&gt;</span>
+<span class="key">&lt;camera&gt;</span>
+    cameraPosOrien.dat
+<span class="key">&lt;\camera&gt;</span>
+<span class="key">&lt;markers&gt;</span>
+    gridMarkers.txt,      <span class="key">&lt;sphere r0</span><span class="num">.02                      </span><span class="key">R0</span><span class="num">.6 </span><span class="key">G0</span><span class="num">.6 </span><span class="key">B0</span><span class="num">.9 </span><span class="key">T0</span><span class="num">.0</span><span class="key">&gt;</span>
+    floorMarkers.txt,     <span class="key">&lt;box    x0</span><span class="num">.05 </span><span class="key">y0</span><span class="num">.01 </span><span class="key">z0</span><span class="num">.2     </span><span class="key">R0</span><span class="num">.6 </span><span class="key">G0</span><span class="num">.6 </span><span class="key">B0</span><span class="num">.8 </span><span class="key">T0</span><span class="num">.0</span><span class="key">&gt;</span>
+    xyGridMarkers.txt, <span class="key">&lt;sphere r0</span><span class="num">.01                     </span><span class="key">R0</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.8 </span><span class="key">T0</span><span class="num">.0</span><span class="key">&gt;</span>
+<span class="key">&lt;\markers&gt;</span>
+#<span class="key">&lt;plot3D&gt;</span>
+    ankleLeftTorquePLOTY.dat,<span class="key">&lt;w1 R0</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.5 </span><span class="key">T0</span><span class="num">.5  </span><span class="key">s0</span><span class="num">.075 </span><span class="key">m1 R1</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.0 </span><span class="key"></span><span class="str">&quot;Ankle Torque&quot;</span><span class="key"> R0</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.0</span><span class="key">&gt;</span>
+    kneeLeftTorquePLOTY.dat, <span class="key">&lt;w1 R0</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.5 </span><span class="key">T0</span><span class="num">.5  </span><span class="key">s0</span><span class="num">.075 </span><span class="key">m1 R1</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.0 </span><span class="key"></span><span class="str">&quot;Knee Torque&quot;</span><span class="key">  R0</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.0</span><span class="key">&gt;</span>
+    hipLeftTorquePLOTY.dat,     <span class="key">&lt;w1 R0</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.5 </span><span class="key">T0</span><span class="num">.5  </span><span class="key">s0</span><span class="num">.075 </span><span class="key">m1 R1</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.0 </span><span class="key"></span><span class="str">&quot;Hip Torque&quot;</span><span class="key">   R0</span><span class="num">.0 </span><span class="key">G0</span><span class="num">.0 </span><span class="key">B0</span><span class="num">.0</span><span class="key">&gt;</span>
+<span class="key">&lt;\plot3D&gt;</span>
+<span class="key">&lt;stickFigures&gt;</span>
+    stickfigure.dat, <span class="key">&lt;R0 G0 B0 &gt;</span>
+<span class="key">&lt;\stickFigures&gt;</span>
+#<span class="key">&lt;movingLabels&gt;</span>
+    larryLabel.dat, <span class="key">&lt; </span><span class="str">&quot;Larry&quot;</span><span class="key"> s0</span><span class="num">.5 </span><span class="key">R0</span><span class="num">.0  </span><span class="key">G0</span><span class="num">.0  </span><span class="key">B1</span><span class="num">.0 </span><span class="key">&gt;</span>
+<span class="key">&lt;\movingLabels&gt;</span>
+
+Anything that is not betwetween a recognized tag such as those above,
+int the angled brackets, is treated as a comment.
+
+If the tags in the square brackets have any other character (such as the
+<span class="str">&quot;#&quot;</span> in front of the moving Label) then the whole block is ignored. At
+the moment there is no way to comment out a single entry for a given
+tag, you just have to move it outside from its tagged region.
+</pre>
+</body>
+</html>
+<!--HTML generated by highlight 2.0-25, http://www.andre-simon.de/-->

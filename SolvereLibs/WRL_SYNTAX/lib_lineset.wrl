@@ -1,0 +1,9 @@
+DEF $TAG$_TG LineSet {
+	 vertexCount [$VERTEXCOUNT$]
+	coord Coordinate {
+		point[$COORDINATE$]
+	}	
+	#color Color {
+	#	color[$COLOR$]
+	#}
+}

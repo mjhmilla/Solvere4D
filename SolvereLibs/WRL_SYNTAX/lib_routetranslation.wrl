@@ -1,0 +1,2 @@
+ROUTE TS.fraction_changed TO $TAG$_PI.set_fraction
+ROUTE $TAG$_PI.value_changed TO $TAG$.translation

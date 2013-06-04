@@ -1,0 +1,12 @@
+DEF $TAG$_TG TriangleSet {
+	 ccw $CCW$
+	 solid $SOLID$
+	 normalPerVertex TRUE
+	 colorPerVertex TRUE
+		coord Coordinate {
+			point[$COORDINATE$]
+		}
+		#color Color {
+		#	color[$COLOR$]
+		#}
+}

@@ -1,0 +1,2 @@
+ROUTE TS.fraction_changed TO $TAG$_SI.set_fraction
+ROUTE $TAG$_SI.value_changed TO $TAG$.set_scale

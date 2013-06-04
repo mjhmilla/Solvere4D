@@ -1,0 +1,8 @@
+<timeScaling>,	1.0
+<downSampling>,	4
+<lightDirection>,  <X-0.5 Y-0.5 Z-1>
+<headlight>, 0
+<backgroundColour>, <R0.9 G0.9 B0.9> 
+<bodyGEO>,<bodiesMOV>
+	spring_1m.wrl,	spring.dat
+<\bodyGEO>,<\bodiesMOV>

@@ -1,0 +1,24 @@
+#VRML V2.0 utf8
+#Created by Solvere4D, the free and open 4D post processor
+#  V1.0 - Sept 17, 2008 - by Matthew Millard
+
+DEF TS TimeSensor {
+cycleInterval $TIME$
+loop TRUE
+enabled FALSE
+}
+
+Background { skyColor $RGB$ }
+
+DEF DefaultLight DirectionalLight {
+	ambientIntensity 0.5
+	color	1 1 1
+	direction $DL_DIRECTION$
+	intensity 1
+	on $DL_ON$
+}
+
+DEF DefaultNavInfo NavigationInfo {
+	headlight $HEADLIGHT$
+	type ["WALK" "ANY"]
+}

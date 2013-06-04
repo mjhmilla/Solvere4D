@@ -1,0 +1,9 @@
+DEF $TAG$ Transform {
+    translation $TRANSLATION$
+    rotation $ROTATION$
+    scale $SCALE$
+
+    children [
+        $CHILDREN$
+    ]
+}

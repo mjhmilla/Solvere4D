@@ -1,0 +1,41 @@
+<timeScaling>,	1.0
+<downSampling>,	4
+<lightDirection>,  <X -0.5 Y -0.5 Z -1>
+<headlight>, 0
+<backgroundColour>, <R 0.9 G 0.9 B 0.9> 
+<bodyGEO>,<bodiesMOV>
+	redsphere.wrl,	M1.dat
+	redsphere.wrl,	M2.dat
+	redsphere.wrl,	M3.dat
+	redsphere.wrl,	M4.dat
+	redsphere.wrl,	M5.dat
+	redsphere.wrl,	M6.dat
+	bluesphere.wrl,	M7.dat
+	bluesphere.wrl,	M8.dat
+	bluesphere.wrl,	M9.dat
+	bluesphere.wrl,	M10.dat
+	bluesphere.wrl,	M11.dat
+	bluesphere.wrl,	M12.dat
+	redplane.wrl,	FPEX.dat
+<\bodyGEO>,<\bodiesMOV>
+<camera>
+	cameraPosOrien.dat
+<\camera>
+<plot3D> 
+	Ho.dat,		<w 0 R 0.5  G 0.0  B 0.0  T 0.75  s 0.15 m 1 R 0.0 G 0.0 B 0.0 "Ho"    R 0.0  G 0.0  B 0.0>       	
+	TpV.dat,	<w 0 R 0.0  G 0.5  B 0.0  T 0.75  s 0.15 m 1 R 0.0 G 0.0 B 0.0 "T+V"   R 0.0  G 0.0  B 0.0>
+	L.dat,		<w 0 R 0.0  G 0.0  B 0.5  T 0.75  s 0.15 m 1 R 0.0 G 0.0 B 0.0 "L"     R 0.0  G 0.0  B 0.0>	
+	JCOM.dat,	<w 0 R 0.25 G 0.25 B 0.25 T 0.75  s 0.15 m 1 R 0.0 G 0.0 B 0.0 "J_COM" R 0.0  G 0.0  B 0.0>
+<\plot3D>
+<movingLabels>
+	FPELabel.dat, <"FPE" s 0.25 R 0.10  G 0.10  B 0.10>
+<\movingLabels>	
+<markers>
+	floorMarkers.txt, <box x 0.09 y 0.03 z 0.2 R 0.6 G 0.6 B 0.6 T 0.50> 
+<\markers>
+<stickFigures>
+	motionL_SF.dat,  <R 0.7 G 0.7 B 0.9>
+	motionR_SF.dat,  <R 0.4 G 0.2 B 0.2>
+	FPE_SF.dat,	     <R 1.0 G 0.0 B 0.0>
+	HFP_SF.dat,	     <R 0.0 G 0.0 B 1.0>
+<\stickFigures>

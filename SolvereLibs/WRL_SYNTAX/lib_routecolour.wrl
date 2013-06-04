@@ -1,0 +1,3 @@
+ROUTE TS.fraction_changed TO $TAG$_CI.set_fraction
+ROUTE $TAG$_CI.value_changed TO $TAG$_MAT.diffuseColor
+ROUTE $TAG$_CI.value_changed TO $TAG$_MAT.specularColor

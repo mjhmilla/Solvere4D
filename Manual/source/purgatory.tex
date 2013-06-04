@@ -1,0 +1,117 @@
+\begin{verbatim}
+<timeScaling>,  1.0 <downSampling>, 2 <backgroundColour>, <R0.90
+G0.90 B0.90> <lightDirection>,<X-0.5 Y-0.5 Z-1> <headlight>, 0
+
+<bodyGEO>,<bodiesMOV>
+ hat.wrl,    HatPosOrien.dat
+ thighL.wrl, HipLeftJointPosOrien.dat
+ shinL.wrl,  KneeLeftJointPosOrien.dat
+ footL.wrl,  AnkleLeftJointPosOrien.dat
+ thigh.wrl, HipRightJointPosOrien.dat
+ shin.wrl, KneeRightJointPosOrien.dat
+ foot.wrl, AnkleRightJointPosOrien.dat
+ contact.wrl, heelRightPosOrien.dat
+ contact.wrl, heelLeftPosOrien.dat
+ contact.wrl, toeRightPosOrien.dat
+ contact.wrl, toeLeftPosOrien.dat
+<\bodyGEO>,<\bodiesMOV>
+
+<forceTorque>,<genForceTorquePlots> normF=1000.0 normT=500.0
+normD=1.0
+ toeRightForces.dat,     <f0 w0 c0 R0.0 G0.0 B0.5 T0.5>  <t0 w1 c1 R1.0 G0.5 B0.0 T0.5>
+ heelRightForces.dat,    <f0 w0 c0 R0.0 G0.0 B1.0 T0.5>  <t0 w1 c1 R0.0 G0.5 B1.0 T0.5>
+ leftGRF.dat,            <f0 w0 c0 R1.0 G0.2 B0.2 T0.5>  <t0 w1 c1 R1.5 G1.0 B0.0 T0.5>
+ hipLeftTorque.dat,      <f0 w1 c1 R0.0 G1.0 B1.0 T0.5>  <t0 w1 c1 R0.33 G0.0  B0.33 T0.5>
+ hipRightTorque.dat,     <f0 w1 c1 R0.5 G0.5 B1.0 T0.5>  <t0 w1 c1 R0.33 G0.33 B0.0 T0.5>
+ kneeLeftTorque.dat,     <f0 w1 c1 R0.5 G0.5 B1.0 T0.5>  <t0 w1 c1 R0.67 G0.0  B0.67 T0.5>
+ kneeRightTorque.dat,    <f0 w1 c1 R0.5 G0.5 B1.0 T0.5>  <t0 w1 c1 R0.67 G0.67 B0.0 T0.5>
+ ankleLeftTorque.dat,    <f0 w1 c1 R0.5 G0.5 B1.0 T0.5>  <t0 w0 c1 R1.0  G0.0  B1.0 T0.25>
+ ankleRightTorque.dat,   <f0 w1 c1 R0.5 G0.5 B1.0 T0.5>  <t0 w1 c1 R1.0  G1.0  B0.0 T0.5>
+<\forceTorque>,<\genForceTorquePlots>
+
+<camera>
+ cameraPosOrien.dat
+<\camera>
+
+<markers>
+ gridMarkers.txt,    <sphere  r0.02          R0.6 G0.6 B0.9 T0.0>
+ floorMarkers.txt,   <box     x0.05 y0.01 z0.2   R0.6 G0.6 B0.8 T0.0>
+ xyGridMarkers.txt,  <sphere  r0.01          R0.0 G0.0 B0.8 T0.0>
+<\markers>
+
+#<plot3D>
+ ankleLeftTorquePLOTY.dat, <w1 R0.0 G0.0 B0.5 T0.5 s0.075 m1 R1.0 G0.0 B0.0 "Ankle Torque" R0.0 G0.0 B0.0>
+ kneeLeftTorquePLOTY.dat,  <w1 R0.0 G0.0 B0.5 T0.5 s0.075 m1 R1.0 G0.0 B0.0 "Knee Torque"  R0.0 G0.0 B0.0>
+ hipLeftTorquePLOTY.dat,   <w1 R0.0 G0.0 B0.5 T0.5 s0.075 m1 R1.0 G0.0 B0.0 "Hip Torque"   R0.0 G0.0 B0.0>
+<\plot3D>
+
+<stickFigures>
+ stickfigure.dat, <R0 G0 B0 >
+<\stickFigures>
+
+#<movingLabels>
+ larryLabel.dat, < "Larry" s0.5 R0.0  G0.0  B1.0 >
+<\movingLabels>
+
+Anything that is not betwetween a recognized tag such as those
+above, int the angled brackets, is treated as a comment.
+
+If the tags in the square brackets have any other character (such as
+the "#" in front of the moving Label) then the whole block is
+ignored. At the moment there is no way to comment out a single entry
+for a given tag, you just have to move it outside from its tagged
+region.
+\end{verbatim}
+
+\begin{verbatim}
+<timeScaling>,  1.0 <downSampling>, 4 <lightDirection>,  <X-0.5
+Y-0.5 Z-1> <headlight>, 0 <backgroundColour>, <R0.9 G0.9 B0.9>
+
+<bodyGEO>,<bodiesMOV>
+    redsphere.wrl,  M1.dat
+    redsphere.wrl,  M2.dat
+    redsphere.wrl,  M3.dat
+    redsphere.wrl,  M4.dat
+    redsphere.wrl,  M5.dat
+    redsphere.wrl,  M6.dat
+    bluesphere.wrl, M7.dat
+    bluesphere.wrl, M8.dat
+    bluesphere.wrl, M9.dat
+    bluesphere.wrl, M10.dat
+    bluesphere.wrl, M11.dat
+    bluesphere.wrl, M12.dat
+    redplane.wrl,   FPEX.dat
+<\bodyGEO>,<\bodiesMOV>
+
+<camera>
+    cameraPosOrien.dat
+<\camera>
+
+<plot3D>
+    Ho.dat, <w0 R0.5 G0.0 B0.0 T0.75 s0.15 m1 R0.0 G0.0 B0.0 "Ho"  R0.0 G0.0 B0.0>
+    TpV.dat,<w0 R0.0 G0.5 B0.0 T0.75 s0.15 m1 R0.0 G0.0 B0.0 "T+V" R0.0 G0.0 B0.0>
+    L.dat,  <w0 R0.0 G0.0 B0.5 T0.75 s0.15 m1 R0.0 G0.0 B0.0 "L"   R0.0 G0.0 B0.0>
+    JCOM.dat,<w0 R0.25 G0.25 B0.25 T0.75 s0.15 m1 R0.0 G0.0 B0.0 "J_COM" R0.0 G0.0 B0.0>
+<\plot3D>
+
+<movingLabels>
+    FPELabel.dat, <"FPE" s0.25 R0.10  G0.10  B0.10>
+<\movingLabels>
+
+<markers>
+    floorMarkers.txt, <box x0.09 y0.03 z0.2 R0.6 G0.6 B0.6 T0.50>
+<\markers>
+
+<stickFigures>
+    motionL_SF.dat,  <R0.7 G0.7 B0.9>
+    motionR_SF.dat,  <R0.4 G0.2 B0.2>
+    FPE_SF.dat,  <R1.0 G0.0 B0.0>
+    HFP_SF.dat,  <R0.0 G0.0 B1.0>
+<\stickFigures>
+\end{verbatim}
+
+\begin{verbatim}
+<bodyGEO>,<bodiesMOV>
+  redsphere.wrl,  M1.dat
+<\bodyGEO>,<\bodiesMOV>
+\end{verbatim}

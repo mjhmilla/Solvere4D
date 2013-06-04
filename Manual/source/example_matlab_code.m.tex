@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage{color}
+\usepackage{alltt}
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\hlkey}[1]{\textcolor[rgb]{0,0,1}{\bf{#1}}}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.66,0,0.66}{#1}}
+\newcommand{\hltyp}[1]{\textcolor[rgb]{0,0,1}{#1}}
+\newcommand{\hlesc}[1]{\textcolor[rgb]{0.77,0.18,0.66}{#1}}
+\newcommand{\hlstr}[1]{\textcolor[rgb]{1,0,0}{#1}}
+\newcommand{\hldstr}[1]{\textcolor[rgb]{1,0,0}{#1}}
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.4,0.4,0.4}{\it{#1}}}
+\newcommand{\hldir}[1]{\textcolor[rgb]{0,0.72,0}{#1}}
+\newcommand{\hlsym}[1]{\textcolor[rgb]{1,0,0}{#1}}
+\newcommand{\hlline}[1]{\textcolor[rgb]{0.4,0.4,0.4}{#1}}
+
+\title{C:\Documents and Settings\mjhmilla\DynaFlexAnimation\Solvere4D\Manual\source\example_matlab_code.m}
+\oddsidemargin -3mm
+\textwidth 165,2truemm
+\topmargin 0truept
+\headheight 0truept
+\headsep 0truept
+\textheight 230truemm
+
+\begin{document}
+\definecolor{bgcolor}{rgb}{1,1,1}
+\pagecolor{bgcolor}
+\noindent
+\ttfamily
+\hlstd{}\hlcom{\%\%\\
+}\hlstd{}\hlcom{\%\ Write\ the\ VRML\ data\ files\\
+}\hlstd{}\hlcom{\%\%\mbox{}\\
+}\hlstd{\\
+}\hlkey{if\ }\hlstd{flag\textunderscore genVRMLFiles\ ==\ }\hlnum{1\mbox{}\\
+\\
+\ }\hlstd{}\hlcom{\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\\
+}\hlstd{\ }\hlcom{\%\\
+}\hlstd{\ }\hlcom{\%\ 1.\ Copy\ over\ the\ files\ in\ the\ support\ directory\\
+}\hlstd{\ }\hlcom{\%\\
+}\hlstd{\ }\hlcom{\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\mbox{}\\
+}\hlstd{\mbox{}\\
+\\
+\hlstd{\ \ \ \ }}\hltyp{tempDir\ }\hlstd{=\ }\hlkey{pwd}\hlstd{;\mbox{}\\
+\\
+\hlstd{\ \ \ \ }aniDir\ =\ ['C:$\backslash$mjhmilla\textunderscore TEMP$\backslash$FPE$\backslash$Animation'];\\
+\hlstd{\ \ \ \ }}\hlkey{cd}\hlstd{(aniDir);\\
+\hlstd{\ \ \ \ }supDir\ =\ [aniDir,'$\backslash$suppfiles'];\mbox{}\\
+\\
+\hlstd{\ \ \ \ }subDir\ =\ ['S',}\hltyp{num2str}\hlstd{(i)];\\
+\hlstd{\ \ \ \ }expDir\ =\ expName;\\
+\hlstd{\ \ \ \ }trialDir\ =\ ['T',}\hltyp{num2str}\hlstd{(k)];\mbox{}\\
+\\
+\hlstd{\ \ \ \ }}\hlcom{\%\%\\
+}\hlstd{\hlstd{\ \ \ \ }}\hlcom{\%Get\ into\ the\ proper\ directory\\
+}\hlstd{\hlstd{\ \ \ \ }}\hlcom{\%\%\mbox{}\\
+}\hlstd{\\
+\hlstd{\ \ \ \ }}\hlkey{if\ }\hlstd{isdir(subDir)\\
+\hlstd{\ \ \ \ \ \ \ \ }}\hlkey{cd}\hlstd{(subDir);\\
+\hlstd{\ \ \ \ }}\hlkey{else\\
+\hlstd{\ \ \ \ \ \ \ \ }}\hlstd{mkdir(subDir);\\
+\hlstd{\ \ \ \ \ \ \ \ }}\hlkey{cd}\hlstd{(subDir);\\
+\hlstd{\ \ \ \ }}\hlkey{end\mbox{}\\
+\\
+\hlstd{\ \ \ \ }if\ }\hlstd{isdir(expDir)\\
+\hlstd{\ \ \ \ \ \ \ \ }}\hlkey{cd}\hlstd{(expDir);\\
+\hlstd{\ \ \ \ }}\hlkey{else\\
+\hlstd{\ \ \ \ \ \ \ \ }}\hlstd{mkdir(expDir);\\
+\hlstd{\ \ \ \ \ \ \ \ }}\hlkey{cd}\hlstd{(expDir);\\
+\hlstd{\ \ \ \ }}\hlkey{end\mbox{}\\
+\\
+\hlstd{\ \ \ \ }if\ }\hlstd{isdir(trialDir)\\
+\hlstd{\ \ \ \ \ \ \ \ }}\hlkey{cd}\hlstd{(trialDir);\\
+\hlstd{\ \ \ \ }}\hlkey{else\\
+\hlstd{\ \ \ \ \ \ \ \ }}\hlstd{mkdir(trialDir);\\
+\hlstd{\ \ \ \ \ \ \ \ }}\hlkey{cd}\hlstd{(trialDir);\\
+\hlstd{\ \ \ \ }}\hlkey{end\mbox{}\\
+\\
+\hlstd{\ \ \ \ }}\hlstd{fileDir\ =\ }\hlkey{pwd}\hlstd{;\mbox{}\\
+\\
+\ }\hlcom{\%Now\ we\ are\ in\ the\ directory\ we\ would\ like\ to\\
+}\hlstd{\ }\hlcom{\%have\ the\ support\ files\ in.\ Time\ to\ get\ DOS\ to\\
+}\hlstd{\ }\hlcom{\%copy\ them\ over\ for\ us\mbox{}\\
+}\hlstd{\\
+\hlstd{\ \ \ \ }}\hlkey{dos}\hlstd{(['xcopy\ ',supDir,\ '\ /e\ /Y']);\mbox{}\\
+\\
+}\hlcom{\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\\
+}\hlstd{}\hlcom{\%\\
+}\hlstd{}\hlcom{\%\ 2.\ Generate\ your\ data\ and\ write\ it\ to\ the\ appropriate\\
+}\hlstd{}\hlcom{\%\hlstd{\ \ \ \ }*.dat\ files\ using\ the\ following\ command\ for\ each\\
+}\hlstd{}\hlcom{\%\hlstd{\ \ \ \ }matrix\ of\ data:\\
+}\hlstd{}\hlcom{\%\\
+}\hlstd{}\hlcom{\%\hlstd{\ \ \ \ \ \ }dlmwrite(['filename.dat'],\ matrixName,\ '$\backslash$t');\\
+}\hlstd{}\hlcom{\%\\
+}\hlstd{}\hlcom{\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\mbox{}\\
+}\hlstd{\mbox{}\\
+\\
+}\hlcom{\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\\
+}\hlstd{}\hlcom{\%\\
+}\hlstd{}\hlcom{\%\ 3.\ Create\ the\ *.bat\ file\ required\ to\ run\ Solvere4D\\
+}\hlstd{}\hlcom{\%\hlstd{\ \ \ \ }then\ call\ it\ from\ DOS\ to\ create\ our\ new\ animation\\
+}\hlstd{}\hlcom{\%\\
+}\hlstd{}\hlcom{\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\mbox{}\\
+}\hlstd{\mbox{}\\
+\\
+\hlstd{\ \ \ \ }goToS4D\ =\ '}\hlkey{cd\ }\hlstd{C}\hlcom{\%s$\backslash$$\backslash$Solvere4D$\backslash$$\backslash$build$\backslash$$\backslash$classes';\mbox{}\\
+}\hlstd{\\
+\hlstd{\ \ \ \ }runRunSolver4D\ =\ ['java\ Solvere4D.Solvere4D',\ ...\\
+\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }'\ C:/exampleFolder/exampleFile.s4d'];\\
+\hlstd{\ \ \ \ }goToHomeDir\ =\ }\hlkey{pwd}\hlstd{;\\
+\hlstd{\ \ \ \ }goToHomeDir\ =\ '}\hlkey{cd\ }\hlstd{'\ +\ curDir;\mbox{}\\
+\\
+\ }\hlcom{\%Write\ the\ *.bat\ file\\
+}\hlstd{\hlstd{\ \ \ \ }fid\ =\ }\hltyp{fopen}\hlstd{('createFPE.bat',\ 'w');\\
+\hlstd{\ \ \ \ }}\hltyp{fprintf}\hlstd{(fid,\ goToS4D,':');\\
+\hlstd{\ \ \ \ }}\hltyp{fprintf}\hlstd{(fid,\ '$\backslash$n');\\
+\hlstd{\ \ \ \ }}\hltyp{fwrite}\hlstd{(fid,\ runSolvere4D);\\
+\hlstd{\ \ \ \ }}\hltyp{fwrite}\hlstd{(fid,\ goToHomeDir);\\
+\hlstd{\ \ \ \ }}\hltyp{fclose}\hlstd{(fid);\mbox{}\\
+\\
+\ }\hlcom{\%Run\ the\ *.bat\ file\ to\ get\ Solvere4D\ to\ create\ the\ animation\\
+}\hlstd{\hlstd{\ \ \ \ }}\hlkey{dos}\hlstd{('createFPE.bat');\mbox{}\\
+\\
+\ }\hlcom{\%Rename\ the\ animation\ file\ and\ copy\ it\ to\ another\ directory\\
+}\hlstd{\hlstd{\ \ \ \ }}\hlkey{dos}\hlstd{(['copy\ exampleFile.wrl\ ',\ 'C:$\backslash$AnotherFolder$\backslash$']);\\
+}\hlkey{end\mbox{}\\
+\\
+}\hlstd{}\hlcom{\%\%\\
+}\hlstd{}\hlcom{\%\ Done\ Writing\ the\ VRML\ data\ files\\
+}\hlstd{}\hlcom{\%\%}\hlstd{}\\
+\mbox{}\\
+\normalfont
+\end {document}
+(* LaTeX generated by highlight 2.0-25, http://www.andre-simon.de/ *)

@@ -1,0 +1,4 @@
+DEF $TAG$_OI OrientationInterpolator {
+ key [ $KEY$ ]
+ keyValue [ $KEYVALUE$ ]
+}

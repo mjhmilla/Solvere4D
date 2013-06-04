@@ -1,0 +1,17 @@
+Transform {
+translation $TRANSLATION$
+	children [
+		Shape{
+			appearance Appearance{
+				material Material{
+				  diffuseColor $RGB$
+				  transparency $TRANSPARENCY$
+				}
+			}
+			geometry Sphere {
+				radius $RADIUS$
+				solid TRUE
+			}
+		}
+	]
+}

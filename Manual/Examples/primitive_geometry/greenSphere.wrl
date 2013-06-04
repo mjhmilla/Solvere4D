@@ -1,0 +1,31 @@
+#VRML V2.0 utf8
+
+DEF redSphere Transform {
+    translation 0 0 0
+    scale 1 1 1
+
+    children [
+        Transform {
+        translation 0 0 0
+        scale 1 1 1
+         children [
+          Shape{
+                   appearance Appearance{
+                      material DEF redSphere Material{
+                          diffuseColor 0 1 0
+                          specularColor 0 1 0
+                          shininess 0.5
+                          transparency 0
+                       }
+                    }
+
+                    geometry Sphere {
+                        radius 1
+                        solid TRUE
+                    }
+                }
+            ]
+        }
+
+    ]
+}

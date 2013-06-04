@@ -1,0 +1,4 @@
+DEF $TAG$_CI ColorInterpolator {
+ key [ $KEY$ ]
+ keyValue [ $KEYVALUE$ ]
+}

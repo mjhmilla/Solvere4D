@@ -1,0 +1,4 @@
+DEF $TAG$_PI PositionInterpolator {
+ key [ $KEY$ ]
+ keyValue [ $KEYVALUE$ ]
+}
